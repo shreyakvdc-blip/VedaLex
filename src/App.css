@@ -1,0 +1,1087 @@
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f0e7;
+  color: #173b2a;
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   SPLASH SCREEN
+========================================================= */
+
+.splash-screen {
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f0e7;
+  color: #173b2a;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+
+  padding: 40px 20px;
+}
+
+
+/* =========================================================
+   DECORATIVE BACKGROUND
+========================================================= */
+
+.splash-screen::before {
+  content: "";
+
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  border-radius: 50%;
+
+  background: #2c633d;
+
+  opacity: 0.08;
+
+  top: -280px;
+  left: -180px;
+
+  pointer-events: none;
+}
+
+.splash-screen::after {
+  content: "";
+
+  position: absolute;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+
+  background: #faa51e;
+
+  opacity: 0.08;
+
+  bottom: -250px;
+  right: -180px;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.splash-content {
+  width: 100%;
+  max-width: 850px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.vedalex-logo {
+  width: 270px;
+  height: auto;
+
+  display: block;
+
+  margin-bottom: 12px;
+
+  object-fit: contain;
+
+  filter: drop-shadow(
+    0 10px 18px rgba(23, 59, 42, 0.12)
+  );
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.splash-content h1 {
+  color: #173b2a;
+
+  font-size: 54px;
+
+  line-height: 1.05;
+
+  letter-spacing: -1.5px;
+
+  margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   TAGLINE
+========================================================= */
+
+.tagline {
+  color: #2c633d;
+
+  font-size: 20px;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+
+  max-width: 750px;
+}
+
+.subtitle {
+  color: #3f7f9d;
+
+  font-size: 15px;
+
+  margin-top: 9px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   SANSKRIT
+========================================================= */
+
+.sanskrit-verse {
+  width: min(700px, 95%);
+
+  margin-top: 20px;
+
+  padding: 14px 25px;
+
+  background: rgba(249, 231, 181, 0.5);
+
+  border-left: 3px solid #faa51e;
+  border-right: 3px solid #faa51e;
+
+  border-radius: 12px;
+}
+
+.sanskrit-text {
+  color: #173b2a;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+}
+
+.sanskrit-meaning {
+  color: #3f7f9d;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  margin-top: 5px;
+}
+
+.verse-source {
+  display: block;
+
+  color: #2c633d;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  margin-top: 4px;
+}
+
+
+/* =========================================================
+   ENTER BUTTON
+========================================================= */
+
+.enter-button {
+  margin-top: 24px;
+
+  padding: 14px 30px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #faa51e;
+
+  color: #173b2a;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  position: relative;
+
+  z-index: 10;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.enter-button:hover {
+  background: #fbc16d;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(23, 59, 42, 0.15);
+}
+
+.enter-button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   BOTTOM BRANDING
+========================================================= */
+
+.verse {
+  width: 100%;
+
+  text-align: center;
+
+  margin-top: 25px;
+
+  position: relative;
+
+  z-index: 2;
+}
+
+.verse p {
+  color: #3f7f9d;
+
+  font-size: 12px;
+
+  font-style: italic;
+
+  margin-bottom: 4px;
+}
+
+.verse span {
+  color: #2c633d;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   VEDALEX CHECK VERIFICATION PAGE
+========================================================= */
+
+.check-verification-page {
+  width: 100%;
+  min-height: 100vh;
+
+  background: #f4f0e7 !important;
+
+  color: #173b2a !important;
+}
+
+
+/* =========================================================
+   FORCE ALL CHECK PAGE TEXT TO BE VISIBLE
+========================================================= */
+
+.check-verification-page h1,
+.check-verification-page h2,
+.check-verification-page h3,
+.check-verification-page h4,
+.check-verification-page h5,
+.check-verification-page h6,
+.check-verification-page p,
+.check-verification-page span,
+.check-verification-page strong,
+.check-verification-page label,
+.check-verification-page div {
+  text-shadow: none !important;
+}
+
+
+/* =========================================================
+   CAPTURED INFORMATION BOX
+========================================================= */
+
+.check-verification-page .captured-box-fix {
+  background: #f9e7b5 !important;
+
+  color: #173b2a !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* EVERYTHING INSIDE CAPTURED BOX */
+
+.check-verification-page .captured-box-fix,
+.check-verification-page .captured-box-fix *,
+.check-verification-page .captured-box-fix h1,
+.check-verification-page .captured-box-fix h2,
+.check-verification-page .captured-box-fix h3,
+.check-verification-page .captured-box-fix h4,
+.check-verification-page .captured-box-fix h5,
+.check-verification-page .captured-box-fix h6,
+.check-verification-page .captured-box-fix p,
+.check-verification-page .captured-box-fix span,
+.check-verification-page .captured-box-fix div,
+.check-verification-page .captured-box-fix strong {
+  color: #173b2a !important;
+
+  -webkit-text-fill-color: #173b2a !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* CAPTURED BOX HEADING */
+
+.check-verification-page
+.captured-box-fix
+h4 {
+  color: #173b2a !important;
+
+  -webkit-text-fill-color: #173b2a !important;
+
+  font-weight: 800 !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* CAPTURED BOX VALUES */
+
+.check-verification-page
+.captured-box-fix
+.captured-value-fix {
+  color: #2c633d !important;
+
+  -webkit-text-fill-color: #2c633d !important;
+
+  font-weight: 700 !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* =========================================================
+   VERIFICATION SIGNAL TAGS
+========================================================= */
+
+.check-verification-page
+.signal-tag-label {
+  color: #173b2a !important;
+
+  -webkit-text-fill-color: #173b2a !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+.check-verification-page
+.signal-tag-value {
+  color: #2c633d !important;
+
+  -webkit-text-fill-color: #2c633d !important;
+
+  font-weight: 700 !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* =========================================================
+   INFORMATION NOTICE
+========================================================= */
+
+.check-verification-page .notice-fix {
+  background: #f4f0e7 !important;
+
+  color: #173b2a !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* EVERYTHING INSIDE NOTICE */
+
+.check-verification-page .notice-fix,
+.check-verification-page .notice-fix *,
+.check-verification-page .notice-fix p,
+.check-verification-page .notice-fix span,
+.check-verification-page .notice-fix div,
+.check-verification-page .notice-fix strong {
+  color: #173b2a !important;
+
+  -webkit-text-fill-color: #173b2a !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* =========================================================
+   CHECK CARDS
+========================================================= */
+
+.check-verification-page .checkCard {
+  color: #173b2a !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+.check-verification-page .checkCard h3,
+.check-verification-page .checkCard p,
+.check-verification-page .checkCard span,
+.check-verification-page .checkCard div {
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* =========================================================
+   FACTS SECTION
+========================================================= */
+
+.check-verification-page .factCard,
+.check-verification-page .factsCard {
+  color: #173b2a !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+.check-verification-page .factCard *,
+.check-verification-page .factsCard * {
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* =========================================================
+   IMPORTANT NOTICE
+========================================================= */
+
+.check-verification-page .importantNotice,
+.check-verification-page .nextCard {
+  color: #173b2a !important;
+
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* =========================================================
+   NEXT STEP
+========================================================= */
+
+.check-verification-page .nextStep,
+.check-verification-page .nextStepCard {
+  opacity: 1 !important;
+
+  visibility: visible !important;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .splash-screen {
+    padding: 30px 16px;
+  }
+
+  .vedalex-logo {
+    width: 220px;
+  }
+
+  .splash-content h1 {
+    font-size: 42px;
+  }
+
+  .tagline {
+    font-size: 17px;
+  }
+
+  .subtitle {
+    font-size: 13px;
+  }
+
+  .sanskrit-verse {
+    width: 95%;
+
+    padding: 12px 14px;
+
+    margin-top: 17px;
+  }
+
+  .sanskrit-text {
+    font-size: 16px;
+  }
+
+  .sanskrit-meaning {
+    font-size: 11px;
+  }
+
+  .enter-button {
+    margin-top: 20px;
+
+    padding: 13px 25px;
+  }
+
+  .verse {
+    margin-top: 20px;
+  }
+
+  .check-verification-page {
+    overflow-x: hidden;
+  }
+}
+/* ===== VEDALEX CHECK PAGE - FORCE TEXT VISIBILITY ===== */
+
+.check-verification-page,
+.check-verification-page * {
+  -webkit-text-fill-color: inherit;
+}
+
+.check-verification-page .capturedBox,
+.check-verification-page .capturedBox h3,
+.check-verification-page .capturedBox h4,
+.check-verification-page .capturedBox p,
+.check-verification-page .capturedBox div,
+.check-verification-page .capturedBox span,
+.check-verification-page .inlineNotice,
+.check-verification-page .inlineNotice p,
+.check-verification-page .noticeText {
+  color: #173B2A !important;
+  -webkit-text-fill-color: #173B2A !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Labels */
+.check-verification-page .capturedLabel {
+  color: #2C633D !important;
+  -webkit-text-fill-color: #2C633D !important;
+}
+
+/* Values */
+.check-verification-page .capturedValue {
+  color: #173B2A !important;
+  -webkit-text-fill-color: #173B2A !important;
+}
+
+/* Titles */
+.check-verification-page .capturedTitle {
+  color: #173B2A !important;
+  -webkit-text-fill-color: #173B2A !important;
+}
+
+/* Notice */
+.check-verification-page .noticeText {
+  color: #173B2A !important;
+  -webkit-text-fill-color: #173B2A !important;
+}
+/* =========================================================
+   COMMERCIALISE
+========================================================= */
+
+.commercialise-page {
+  min-height: 100vh;
+  background: #f4f0e7;
+  color: #173b2a;
+}
+
+.commercialise-header {
+  min-height: 82px;
+  padding: 18px 42px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: #ffffff;
+  border-bottom: 1px solid rgba(23, 59, 42, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.back-button {
+  border: none;
+  background: transparent;
+  color: #173b2a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.back-button:hover {
+  color: #2c633d;
+}
+
+.commercialise-title {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  flex: 1;
+}
+
+.commercialise-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 13px;
+  background: #173b2a;
+  color: #fbc16d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.commercialise-title h1 {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.2;
+}
+
+.commercialise-title p {
+  margin: 4px 0 0;
+  color: #64736a;
+  font-size: 13px;
+}
+
+.jurisdiction-pill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: #f9e7b5;
+  color: #173b2a;
+  border: 1px solid rgba(23, 59, 42, 0.12);
+  border-radius: 30px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.commercialise-content {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 42px 28px 60px;
+}
+
+.launch-hero {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.launch-hero > div:first-child {
+  background: #173b2a;
+  color: #ffffff;
+  border-radius: 22px;
+  padding: 38px;
+}
+
+.eyebrow,
+.section-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  color: #faa51e;
+}
+
+.launch-hero h2 {
+  font-size: 34px;
+  line-height: 1.15;
+  margin: 12px 0 15px;
+  max-width: 650px;
+}
+
+.launch-hero h2 span {
+  color: #fbc16d;
+}
+
+.launch-hero p {
+  max-width: 650px;
+  color: #dce6df;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.product-summary {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 28px;
+  border: 1px solid rgba(23, 59, 42, 0.1);
+  box-shadow: 0 8px 25px rgba(23, 59, 42, 0.05);
+}
+
+.summary-label {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #64736a;
+  margin-bottom: 8px;
+}
+
+.product-summary strong {
+  display: block;
+  font-size: 21px;
+  margin-bottom: 24px;
+  color: #173b2a;
+}
+
+.summary-category {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 13px 0;
+  border-top: 1px solid rgba(23, 59, 42, 0.1);
+  font-size: 13px;
+}
+
+.summary-category span:first-child {
+  color: #718078;
+}
+
+.summary-category span:last-child {
+  font-weight: 700;
+  text-align: right;
+}
+
+.readiness-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px 28px;
+  border: 1px solid rgba(23, 59, 42, 0.1);
+  margin-bottom: 34px;
+}
+
+.readiness-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.readiness-card h3 {
+  margin: 7px 0 0;
+  font-size: 24px;
+}
+
+.readiness-count {
+  background: #f9e7b5;
+  border-radius: 30px;
+  padding: 9px 14px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.progress-track {
+  width: 100%;
+  height: 9px;
+  border-radius: 20px;
+  background: #e7e3d9;
+  margin: 20px 0 12px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #2c633d;
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+.readiness-card p {
+  margin: 0;
+  font-size: 13px;
+  color: #69776f;
+}
+
+.checklist-section {
+  margin-bottom: 34px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.section-heading h3 {
+  margin: 7px 0 0;
+  font-size: 24px;
+}
+
+.verified-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #2c633d;
+}
+
+.commercialise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.commercialise-card {
+  width: 100%;
+  text-align: left;
+  border: 1px solid rgba(23, 59, 42, 0.11);
+  background: #ffffff;
+  border-radius: 17px;
+  padding: 21px;
+  display: flex;
+  gap: 16px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  color: #173b2a;
+}
+
+.commercialise-card:hover {
+  transform: translateY(-2px);
+  border-color: #3f7f9d;
+  box-shadow: 0 8px 24px rgba(23, 59, 42, 0.08);
+}
+
+.commercialise-card.completed {
+  background: #f0f6f1;
+  border-color: #2c633d;
+}
+
+.card-icon {
+  min-width: 43px;
+  width: 43px;
+  height: 43px;
+  border-radius: 12px;
+  background: #f9e7b5;
+  color: #173b2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-content {
+  flex: 1;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card-title-row h4 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.card-title-row > svg {
+  flex-shrink: 0;
+}
+
+.completed-icon {
+  color: #2c633d;
+}
+
+.commercialise-card p {
+  margin: 8px 0 0;
+  color: #69776f;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.action-plan {
+  display: flex;
+  gap: 17px;
+  align-items: flex-start;
+  background: #2c633d;
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 27px;
+  margin-bottom: 18px;
+}
+
+.action-plan-icon {
+  min-width: 45px;
+  width: 45px;
+  height: 45px;
+  border-radius: 13px;
+  background: #faa51e;
+  color: #173b2a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-plan h3 {
+  margin: 7px 0 8px;
+  font-size: 20px;
+}
+
+.action-plan p {
+  margin: 0;
+  color: #e4eee7;
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 850px;
+}
+
+.commercialise-disclaimer {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  background: #f9e7b5;
+  border: 1px solid rgba(250, 165, 30, 0.35);
+  border-radius: 15px;
+  padding: 17px 20px;
+  color: #173b2a;
+}
+
+.commercialise-disclaimer svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.commercialise-disclaimer p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+  .commercialise-header {
+    padding: 16px 20px;
+    gap: 15px;
+  }
+
+  .commercialise-title p {
+    display: none;
+  }
+
+  .launch-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .commercialise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .commercialise-content {
+    padding: 28px 18px 45px;
+  }
+
+  .launch-hero h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  .commercialise-header {
+    flex-wrap: wrap;
+  }
+
+  .commercialise-title {
+    order: 3;
+    width: 100%;
+  }
+
+  .jurisdiction-pill {
+    margin-left: auto;
+  }
+
+  .launch-hero > div:first-child {
+    padding: 27px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .readiness-top {
+    align-items: flex-start;
+    gap: 15px;
+    flex-direction: column;
+  }
+}
